@@ -76,8 +76,8 @@ mongoose
     });
 
     //ADD the DATA ONE TIME
-    User.insertMany(users);
-    Post.insertMany(posts);
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
   .catch((error) => {
     console.log("Server is didn't connect and Error from : " + error);
