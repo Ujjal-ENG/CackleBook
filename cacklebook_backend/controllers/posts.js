@@ -23,13 +23,10 @@ export const createPost = async (req, res) => {
     await newPost.save();
     const post = await Post.find();
     res.status(201).json(post);
-
-
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
 };
-
 
 //READ
 export const getFeedPosts = async (req, res) => {
@@ -39,4 +36,14 @@ export const getFeedPosts = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-}
+};
+
+export const getUserPosts = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const post = await Post.find({ userId });
+    res.status(201).json(post);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
