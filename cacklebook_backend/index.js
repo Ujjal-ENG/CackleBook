@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 
+
 // Configurations
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,16 +37,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+// SETUP ROUTE WITH FILES
+app.post("/auth/register", upload.single("picture"), register);
+
 //MONGOOSE SETUP
 
 const PORT = process.env.PORT || 6001;
 
 //Get Home Method
 app.get("/", (req, res) => {
-  res.send("<h1>This is the Home Page</h1>")
-})
-
-
+  res.send("<h1>This is the Home Page</h1>");
+});
 
 mongoose
   .connect(process.env.MONGO_URL, {
