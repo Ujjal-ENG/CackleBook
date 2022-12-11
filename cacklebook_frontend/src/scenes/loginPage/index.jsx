@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const index = () => {
+const LoginPage = () => {
   return (
     <>
       <h1>This is The Login Page</h1>
     </>
-  )
-}
+  );
+};
 
-export default index
+export default LoginPage;
