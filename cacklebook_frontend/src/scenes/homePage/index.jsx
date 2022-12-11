@@ -1,9 +1,10 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 const index = () => {
-  return <>
-  <h1>Home Page</h1>
-  </>;
+  return <Box>
+    
+  </Box>;
 };
 
 export default index;
